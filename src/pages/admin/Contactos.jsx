@@ -26,6 +26,10 @@ const Contactos = () => {
             <th className='p-2'>Telefono</th>
             <th className='p-2'>Mensaje</th>
           </tr>
+
+          <tbody>
+            
+          </tbody>
         </thead>
       </table>
     </div>
