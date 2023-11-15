@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import {RiAddFill, RiDeleteBin2Fill,RiEdit2Line} from 'react-icons/ri'
 
 
@@ -26,10 +26,6 @@ const Contactos = () => {
             <th className='p-2'>Telefono</th>
             <th className='p-2'>Mensaje</th>
           </tr>
-
-          <tbody>
-            
-          </tbody>
         </thead>
       </table>
     </div>
