@@ -10,10 +10,9 @@ const LayoutAdmin = () => {
       <div className='xl:col-span-5'>
         <Header/>
         <div className='h-[90vh] overflow-y-scroll p-8'>
-          <Outlet/>
+          <Outlet /> {/* Utiliza Outlet para renderizar páginas secundarias */}
         </div>
       </div>
-      
     </div>
   )
 }

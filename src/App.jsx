@@ -1,4 +1,5 @@
-import { useState } from 'react'
+//App.jsx
+//import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //Layout
@@ -18,20 +19,23 @@ import Maquinas from './pages/admin/Maquinas'
 import Blog from './pages/admin/Blog'
 import Contactos from './pages/admin/Contactos'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LayoutAdmin/>}> 
+          <Route path='/' element={<LayoutAdmin/>}>
             <Route index element={<Home/>} />
             <Route path='/chat' element={<Chat/>} />
             <Route path='/maquinas' element={<Maquinas/>} />
             <Route path='/blog' element={<Blog/>} />
             <Route path='/contactos' element={<Contactos/>} />
+            <Route path='/registro' element={<Register/>} />
           </Route>
+          <Route path='/login' element={<Login/>} />
           <Route path='*' element={<Error404/>}/>
         </Routes>
       </BrowserRouter>
