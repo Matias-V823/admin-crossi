@@ -17,6 +17,7 @@ import Chat from './pages/admin/Chat'
 import Maquinas from './pages/admin/Maquinas'
 import Blog from './pages/admin/Blog'
 import Contactos from './pages/admin/Contactos'
+import Test from './pages/admin/Test'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
             <Route path='/maquinas' element={<Maquinas/>} />
             <Route path='/blog' element={<Blog/>} />
             <Route path='/contactos' element={<Contactos/>} />
+            <Route path='/test' element={<Test/>} />
           </Route>
           <Route path='*' element={<Error404/>}/>
         </Routes>

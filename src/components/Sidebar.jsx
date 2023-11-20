@@ -24,6 +24,9 @@ const Sidebar = () => {
             <Link to="/contactos"className='flex items-center gap-4 py-2 px-4 rounded-xl hover:bg-[#065f46]'>
                 <RiContactsBook2Line className='text-white'/> Contactos
             </Link>
+            <Link to="/test"className='flex items-center gap-4 py-2 px-4 rounded-xl hover:bg-[#065f46]'>
+                <RiContactsBook2Line className='text-white'/> Test
+            </Link>
             <Link to="/" className='flex items-center gap-4  mt-[450px] py-2 px-4 rounded-xl hover:bg-[#065f46]'>
                 <RiLoginBoxFill className='text-white'/> Cerrar sesion
             </Link>
