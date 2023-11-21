@@ -1,6 +1,6 @@
+//index.js
 import express from 'express';
 import session from 'express-session';
-import helmet from 'helmet';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -24,30 +24,19 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
-    secret: 'mi-secreto-seguro', // Cambia esto por una cadena secreta más segura en un entorno de producción
+    secret: 'test', // Cambia esto por una cadena secreta más segura en un entorno de producción
     resave: false,
     saveUninitialized: true
 }));
 
-// Configuración de CORS (Asegúrate de que las opciones de CORS estén definidas)
-// const corsOptions = {
-//     origin: "http://localhost:4000", // Reemplaza con la URL de tu cliente
-//     methods: ["GET", "POST"],
-//     allowedHeaders: ["Content-Type", "Authorization"]
-// };
-// app.use(cors(corsOptions));
-
-// Configuración de Helmet para mejorar la seguridad
-app.use(helmet());
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        styleSrc: ["'self'", "'unsafe-inline'", "cdn.example.com", "fonts.googleapis.com"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "cdn.example.com", "localhost:4000"],
-        fontSrc: ["'self'", "fonts.gstatic.com"],
-        // Otras directivas según sea necesario
-    },
-}));
+// Configuración de CORS
+const corsOptions = {
+    //Aceptar solicitudes del cliente
+    origin: "http://localhost:4000", 
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+};
+app.use(cors(corsOptions));
 
 // Rutas
 app.get('/', (req, res) => {
@@ -55,9 +44,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/login', login);
-app.post('/api/registro', registro);
+app.post('/api/registro', registro); //Proximanete cambiarlas al archivo ./routes/home.js
 
-// Iniciar servidor
+
 app.listen(port, () => {
     console.log(`El servidor está funcionando en el puerto ${port}`);
 });

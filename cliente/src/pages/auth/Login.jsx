@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,10 +8,12 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
     axios.post('http://localhost:3000/api/login', { username, password })
       .then(response => {
-        // Guardar el token
+        // Guardar el token, 
+      console.log('data',response.data)
         navigate('/contactos'); 
       })
       .catch(error => {

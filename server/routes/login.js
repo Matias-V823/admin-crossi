@@ -10,14 +10,12 @@ router.post('/api/login', async (req, res) => {
   try {
     const conn = await connectDB();
     const [rows] = await conn.query('SELECT * FROM USUARIOS WHERE usuario = ?', [username]);
+    conn.end()
     if (rows.length === 0 || !bcrypt.compareSync(password, rows[0].clave)) {
-      // Si las credenciales son incorrectas, envía una respuesta de error
+      // Compara las credenciales que ingresa con las de la base de datos
       res.status(401).json({ message: 'Credenciales incorrectas' });
       return;
     }
-
-    // Aquí puedes establecer la sesión del usuario o generar un token de autenticación
-    // Luego, envía una respuesta exitosa
 
     res.json({ message: 'Inicio de sesión exitoso' });
   } catch (error) {

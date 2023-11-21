@@ -16,22 +16,24 @@ const Contactos = () => {
           <button className='bg-secondary-100/50 flex items-center gap-2 py-2 px-4 rounded-lg hover'> <RiDeleteBin2Fill/>Eliminar </button>
         </div>
       </div>
-      <table className='w-full bg-white shadow mt-10 table-auto'>
-        <thead className='bg-blue-800 text-white'>
-          <tr>
-            <th className='p-2'>Nombre</th>
-            <th className='p-2'>Apellido</th>
-            <th className='p-2'>Email</th>
-            <th className='p-2'>Ciudad</th>
-            <th className='p-2'>Telefono</th>
-            <th className='p-2'>Mensaje</th>
-          </tr>
+      <div>
+  <table className='w-full bg-white shadow mt-10 table-auto'>
+    <thead className='bg-blue-800 text-white'>
+      <tr>
+        <th className='p-2'>Nombre</th>
+        <th className='p-2'>Apellido</th>
+        <th className='p-2'>Email</th>
+        <th className='p-2'>Ciudad</th>
+        <th className='p-2'>Telefono</th>
+        <th className='p-2'>Mensaje</th>
+      </tr>
+    </thead>
+    <tbody>
+      {/* Aquí irían las filas con los datos, cada fila con su <tr> y sus <td> */}
+    </tbody>
+  </table>
+</div>
 
-          <tbody>
-            
-          </tbody>
-        </thead>
-      </table>
     </div>
   )
 }
