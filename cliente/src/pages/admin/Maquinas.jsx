@@ -1,7 +1,8 @@
-import React from 'react'
-import {RiAddFill, RiDeleteBin2Fill,RiEdit2Line} from 'react-icons/ri'
+import React from 'react';
+import { RiAddFill, RiDeleteBin2Fill, RiEdit2Line } from 'react-icons/ri';
 
 const Maquinas = () => {
+
   return (
     <div>
       <div className='flex items-center justify-between gap-y-4'>
@@ -27,6 +28,6 @@ const Maquinas = () => {
       </div>
     </div>
   )
-}
+};
 
-export default Maquinas
+export default Maquinas;

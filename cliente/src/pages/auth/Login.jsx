@@ -12,9 +12,8 @@ function Login() {
     event.preventDefault();
     axios.post('http://localhost:3000/api/login', { username, password })
       .then(response => {
-        // Guardar el token, 
-      console.log('data',response.data)
-        navigate('/contactos'); 
+        localStorage.setItem('token', response.data.token)
+        navigate('/maquinas'); //Cambiar esta ruta para redirreccionar al panel de admin
       })
       .catch(error => {
         // Manejar el error de inicio de sesión
